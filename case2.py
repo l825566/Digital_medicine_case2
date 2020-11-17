@@ -198,7 +198,7 @@ def sklearn_train():
 
     plt.show()
 
-'''
+
     allFiles=os.listdir(args.testing_img)
     allFiles.sort()
     j=0
@@ -229,7 +229,7 @@ def sklearn_train():
         i=i+1
         print(i)
     wb.save("testing_submission_trail1_CT_G11.xlsx")
-'''
+
 def pytorch_learn():
 
     transform1 = transforms.Compose([
@@ -454,17 +454,17 @@ def plot_confusion_matrix(cm, classes,
 
 
 def main():
-    #pre_train=Preprocess(train=1,category=category,dirPath=args.train_dir)
-    #pre_train.start()
+    pre_train=Preprocess(train=1,category=category,dirPath=args.train_dir)
+    pre_train.start()
     print("Training data preprocessing is over.")
-    #pre_test=Preprocess(train=0,category=category,dirPath=args.test_dir)
-    #pre_test.start()
+    pre_test=Preprocess(train=0,category=category,dirPath=args.test_dir)
+    pre_test.start()
     print("Testing data preprocessing is over.")
 
 
-    #sklearn_train()
+    sklearn_train()
     pytorch_learn()
-    #resnet()
+    resnet()
 
 
 
